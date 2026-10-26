@@ -5,11 +5,11 @@ public class Storage {
 
     public static class Zone {
         private Integer zoneId;
-        private Bookcase[] bookcases;
+        private Сupboard[] сupboards;
     }
 
-    public static class Bookcase {
-        private Integer bookcaseId;
+    public static class Сupboard {
+        private Integer cupboardId;
         private Shelf[] shelves;
         private Zone zone;
     }
@@ -17,7 +17,7 @@ public class Storage {
     public static class Shelf {
         private Integer shelfId;
         private Cell[] cells;
-        private Bookcase bookcase;
+        private Сupboard сupboard;
     }
 
     public static class Cell {
@@ -31,9 +31,9 @@ public class Storage {
             this.fullPath = generateFullPath();
         }
         public String generateFullPath() {
-            Bookcase bc = shelf.bookcase;
+            Сupboard bc = shelf.сupboard;
             Zone zone = bc.zone;
-            return zone.zoneId + " / " + bc.bookcaseId + " / " + shelf.shelfId + " / " + cellId;
+            return zone.zoneId + " / " + bc.cupboardId + " / " + shelf.shelfId + " / " + cellId;
         }
 
         public String getFullPath() {
