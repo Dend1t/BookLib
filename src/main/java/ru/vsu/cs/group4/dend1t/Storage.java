@@ -3,24 +3,24 @@ package ru.vsu.cs.group4.dend1t;
 public class Storage {
     private Zone[] zones;
 
-    public static class Zone {
+    public class Zone {
         private Integer zoneId;
-        private Bookcase[] bookcases;
+        private Cupboard[] сupboards;
     }
 
-    public static class Bookcase {
-        private Integer bookcaseId;
+    public class Cupboard {
+        private Integer cupboardId;
         private Shelf[] shelves;
         private Zone zone;
     }
 
-    public static class Shelf {
+    public class Shelf {
         private Integer shelfId;
         private Cell[] cells;
-        private Bookcase bookcase;
+        private Cupboard сupboard;
     }
 
-    public static class Cell {
+    public class Cell {
         private final Integer cellId;
         private Shelf shelf;
         private String fullPath;
@@ -31,9 +31,9 @@ public class Storage {
             this.fullPath = generateFullPath();
         }
         public String generateFullPath() {
-            Bookcase bc = shelf.bookcase;
+            Cupboard bc = shelf.сupboard;
             Zone zone = bc.zone;
-            return zone.zoneId + " / " + bc.bookcaseId + " / " + shelf.shelfId + " / " + cellId;
+            return zone.zoneId + " / " + bc.cupboardId + " / " + shelf.shelfId + " / " + cellId;
         }
 
         public String getFullPath() {
