@@ -1,6 +1,8 @@
 package ru.vsu.cs.group4.dend1t;
 
-public class Storage {
+public class Storage { //название уровней
+    //Сохранение в файловую систему по папкам
+    //Вспомогательные файлы
     private Zone[] zones;
 
     public class Zone {
@@ -17,14 +19,19 @@ public class Storage {
     public class Shelf {
         private Integer shelfId;
         private Cell[] cells;
+        private String name;
+        private String decription;
         private Cupboard сupboard;
     }
 
     public class Cell {
         private final Integer cellId;
         private Shelf shelf;
-        private String fullPath;
-
+        private String fullPath; //специальный класс
+        private Boolean reserved;
+        //массив потомков
+        //ссылка на предков
+        //древовидная структура
         public Cell(Integer cellId, Shelf shelf) {
             this.cellId = cellId;
             this.shelf = shelf;
