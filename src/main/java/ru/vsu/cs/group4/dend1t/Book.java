@@ -4,7 +4,6 @@ public class Book {
     private String title;
     private String author;
     private String[]  tags;
-    private String hashCode;
 
     public Book(String title, String author, String[] tags){
         this.title = title;
